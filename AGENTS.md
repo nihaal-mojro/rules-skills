@@ -1,16 +1,8 @@
+  # Mojro Backend — Agent Entry Point
 
-
-
-
-
-
-
-
-# Mojro Backend — Agent Entry Point
-
-Vendor-neutral map for any coding agent (Cursor, Claude Code, or FE tooling)
-working in this workspace. This file is a **router**, not content — it points
-to where the real guidance lives; it doesn't duplicate it.
+Map for Cursor agents working in this workspace. This file is a **router**,
+not content — it points to where the real guidance lives; it doesn't
+duplicate it.
 
 ## What this is
 
