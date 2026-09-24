@@ -27,7 +27,7 @@ Postgres (transactional) + Elasticsearch (master data), 34 service repos.
 
 ## Skills (invoke by relevance, or ask by name)
 
-- `create-a-skill` — creating/restructuring a Cursor skill ---
+- `create-a-skill` — creating/restructuring a Cursor skill
 - `build-apis` — new endpoint, worker, or service method
 - `create-audit` — audit logging for an entity
 - `mojro-masterdata` — Elasticsearch enterprise master data
