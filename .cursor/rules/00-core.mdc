@@ -1,0 +1,33 @@
+---
+description: Mojro platform core — always-on context for any file
+alwaysApply: true
+---
+
+# Mojro platform core
+
+Java 8, Vert.x (HTTP routes + event-bus workers) + Spring (context/DI),
+Postgres (transactional) + Elasticsearch (master data), 34 service repos.
+
+## Invariants
+
+1. Layering: route → event-bus worker → service → DAO. No business logic in
+   API/Worker.
+2. Catalog/config data → Elasticsearch via `IMasterDataService` only. Never a
+   new Postgres table for it.
+3. Audit writes → outbox pattern only (`AuditOutboxEvent` + dispatcher →
+   Kafka → audit-api). Never `AuditLog`/`AuditPublisher`, never a local
+   ad-hoc history table.
+4. Context (`enterpriseId`, `role`, hierarchy) comes from
+   `ParentServiceContextLoader`/`LocalContext`. Never trust a client-supplied
+   enterprise/role param.
+5. Errors funnel through `ExceptionUtil`/`ErrorMapping`/the `Mojro*Exception`
+   family, not raw exceptions to the client.
+6. Check `docs/ai/platform-utilities.md` before writing a new cross-cutting
+   helper.
+
+## Skills (invoke by relevance, or ask by name)
+
+- `create-a-skill` — creating/restructuring a Cursor skill
+- `build-apis` — new endpoint, worker, or service method
+- `create-audit` — audit logging for an entity
+- `mojro-masterdata` — Elasticsearch enterprise master data
