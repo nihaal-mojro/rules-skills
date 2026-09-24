@@ -29,7 +29,7 @@ DAO (Postgres) / IMasterDataService (Elasticsearch)
 
 Context (`enterpriseId`, `role`, `userAuthId`, hierarchy) is injected by
 `ParentServiceContextLoader` from the JWT before the route handler runs —
-never a client-supplied param. See `docs/ai/platform-utilities.md`.
+never a client-supplied param. See `.cursor/docs/platform-utilities.md`.
 
 ## `api-common` — shared library layer
 
@@ -66,7 +66,7 @@ correct entries as you learn more (this doc is meant to be edited).
 | `aggregator-api` | Cross-service data aggregation for UI/reporting. |
 | `pricing-api` | Rate cards / pricing calculation. |
 | `tracker-api` | Vehicle/shipment tracking. |
-| `api-doc` | API documentation hosting (module, not a runtime doc source for agents — superseded here by `docs/ai/`). |
+| `api-doc` | API documentation hosting (module, not a runtime doc source for agents — superseded here by `.cursor/docs/`). |
 | `data-api` | General data access/reporting service. |
 | `geo-resolver-api` | Geocoding / address-to-location resolution. |
 | `planner-api` | Trip planning (see also `analytics/planner-common`, `analytics/trip-assigner`). |

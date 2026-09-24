@@ -126,5 +126,5 @@ Fail closed in the consumer if required catalog missing/inactive/misconfigured.
 ## Related
 
 - [reference.md](reference.md) — code anchors and payload sketch
-- `docs/ai/platform-utilities.md` — general platform utilities (this skill covers master data specifically, not the wider utility surface)
+- `.cursor/docs/platform-utilities.md` — general platform utilities (this skill covers master data specifically, not the wider utility surface)
 - `build-apis` skill — for the API/worker/service layers a catalog-consuming endpoint sits in

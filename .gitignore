@@ -1,28 +1,13 @@
-# mojro-ai-workspace
-#
-# This repo is carved out of the shared `mojro` workspace folder. It tracks
-# ONLY the AI-agent context system (Cursor rules/skills + docs/ai). Every
-# service lives in its own separate git repo checked out as a subdirectory
-# here (api/*, api-common/*, analytics/*) and must never be tracked by this
-# repo, nor must IDE state, build tooling, or stray binaries.
-#
-# Strategy: deny everything by default, then explicitly re-include only the
-# AI-context paths. This is deliberate — do NOT "simplify" this by switching
-# to an exclude-list of today's clutter. A deny-first default means any new
-# top-level file or folder added later (another service checkout, a new temp
-# dir, a downloaded installer) is safe by default with no .gitignore update.
-# If you need to track something new under this repo, add an explicit `!`
-# re-include for it below, following the existing pattern.
+# This repo IS the workspace's `.cursor` folder. Ignore anything Cursor or a
+# developer creates locally in it that should not be shared.
 
-*
+# Personal MCP config (can contain tokens)
+mcp.json
 
-!.gitignore
-!AGENTS.md
-!README.md
+# Cursor-generated / personal working files
+plans/
+*.local.*
 
-!.cursor/
-!.cursor/**
-
-!docs/
-!docs/ai/
-!docs/ai/**
+# OS / editor noise
+.DS_Store
+Thumbs.db

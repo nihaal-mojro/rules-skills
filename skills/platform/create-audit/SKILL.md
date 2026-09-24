@@ -113,7 +113,7 @@ flag it, don't copy it.**
 
 - `build-apis` — the writer-side entity/service you're adding audit
   logging to is built per that skill's layering.
-- `docs/ai/ARCHITECTURE.md` — `audit-api` row, and the "known cross-service
+- `.cursor/docs/ARCHITECTURE.md` — `audit-api` row, and the "known cross-service
   mechanism: audit outbox" section.
 - `.cursor/skills/platform/build-apis/dao-patterns.md` — `Entity`/
   `VersionEntity` base classes and `AuditEntityListener`'s actual (limited)

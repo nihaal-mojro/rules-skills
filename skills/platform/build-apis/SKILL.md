@@ -39,7 +39,7 @@ HTTP  <Service>API (Vert.x)  → event bus → <Service>Worker → I<Service>*Se
 1. **No business logic in API or Worker.** Both layers extract/validate/dispatch only.
 2. Context (`enterpriseId`, `role`, hierarchy, `userAuthId`) comes from the
    JWT via `ParentServiceContextLoader`/`LocalContext` — never a
-   client-supplied query/body param. See `docs/ai/platform-utilities.md`.
+   client-supplied query/body param. See `.cursor/docs/platform-utilities.md`.
 3. Controller→worker call goes through `BaseAPI.invokeAsyncOperation` (+
    `DeliveryOptions` header propagation); the worker reads `msg.headers()`.
    Don't hand-roll an event-bus send that bypasses this.
@@ -54,7 +54,7 @@ HTTP  <Service>API (Vert.x)  → event bus → <Service>Worker → I<Service>*Se
    ad-hoc address string.
 6. Catalog/config data the endpoint reads or writes is master data → see
    `mojro-masterdata`, not a new Postgres table.
-7. **Search `docs/ai/platform-utilities.md` before writing a new
+7. **Search `.cursor/docs/platform-utilities.md` before writing a new
    cross-cutting helper** — check whether `CommonUtil`, `DateUtil`,
    `JacksonUtil`, `EventUtil`, etc. already do what you need.
 
@@ -117,5 +117,5 @@ private void myOperation(RoutingContext context) {
 - `mojro-masterdata` — if the endpoint touches catalog/config data
 - `create-audit` — if the endpoint creates/updates an entity that needs an audit trail
 - `api/dock-api/.cursor/skills/mojro-dock-api/` (in the dock-api repo) — a fully worked, service-specific instance of this pattern
-- `docs/ai/platform-utilities.md` — shared helpers to check before writing new ones
+- `.cursor/docs/platform-utilities.md` — shared helpers to check before writing new ones
 - Future children (not yet authored): `async-methods`, `kafka-events`, `eb-service-calls` — add as `.cursor/skills/platform/<name>/` with `disable-model-invocation: true` when written, and link them here

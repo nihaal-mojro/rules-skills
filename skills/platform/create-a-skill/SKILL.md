@@ -103,7 +103,7 @@ sharpen the trigger phrases before restructuring the content.
 
 ## Related
 
-- `docs/ai/platform-utilities.md` — check before a new skill needs to
+- `.cursor/docs/platform-utilities.md` — check before a new skill needs to
   document a "which util class do I use" table of its own; link there
   instead of duplicating.
 - `.cursor/rules/00-core.mdc` — the always-on core; add a skill's *name*
